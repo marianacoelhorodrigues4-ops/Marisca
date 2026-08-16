@@ -793,3 +793,203 @@ button {
         padding: 18px;
     }
 }
+
+/* =========================
+   LOGIN E CADASTRO
+========================= */
+
+.tela-acesso {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background-image:
+        linear-gradient(
+            rgba(4, 34, 40, 0.35),
+            rgba(4, 34, 40, 0.78)
+        ),
+        url("mestrealvaro_fundo.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.cartao-acesso {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 28px 22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.45);
+
+    border-radius: 24px;
+
+    background:
+        rgba(5, 43, 49, 0.76);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    color: white;
+
+    box-shadow:
+        0 14px 35px
+        rgba(0,0,0,0.30);
+}
+
+
+.logo-acesso {
+    display: block;
+
+    width: 70px !important;
+    height: 70px !important;
+
+    object-fit: contain;
+
+    margin: 0 auto 10px;
+}
+
+
+.cartao-acesso h1 {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 38px;
+    letter-spacing: 2px;
+}
+
+
+.texto-boas-vindas {
+    margin:
+        10px
+        0
+        28px;
+
+    text-align: center;
+
+    color:
+        rgba(255,255,255,0.84);
+}
+
+
+.cartao-acesso h2 {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+
+.cartao-acesso label {
+    display: block;
+
+    margin:
+        16px
+        0
+        6px;
+
+    font-weight: 700;
+}
+
+
+.cartao-acesso input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,0.94);
+
+    color: #173034;
+
+    font-size: 17px;
+}
+
+
+.botao-acesso-principal,
+.botao-acesso-secundario {
+    width: 100%;
+
+    min-height: 55px;
+
+    margin-top: 16px;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+.botao-acesso-principal {
+    background: #d97d5d;
+    color: white;
+}
+
+
+.botao-acesso-secundario {
+    background:
+        rgba(255,255,255,0.15);
+
+    color: white;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.35);
+}
+
+
+.aviso-pin {
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    color:
+        rgba(255,255,255,0.72);
+}
+
+
+.saudacao-usuario {
+    margin-top: 10px;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+
+.btn-sair {
+    width: auto !important;
+    min-height: auto !important;
+
+    margin: 8px auto 0 !important;
+    padding: 7px 14px !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.45) !important;
+
+    border-radius: 20px !important;
+
+    background:
+        rgba(3,34,40,0.45) !important;
+
+    color: white !important;
+
+    font-size: 13px !important;
+
+    box-shadow: none !important;
+}
