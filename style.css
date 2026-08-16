@@ -1,0 +1,735 @@
+* {
+    box-sizing: border-box;
+}
+
+/* =========================
+   ESTRUTURA PRINCIPAL
+   MOBILE FIRST
+========================= */
+
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: #071f24;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background: #071f24;
+}
+
+
+/* =========================
+   TELA PRINCIPAL
+========================= */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    margin: 0;
+    padding: 38px 18px 40px;
+
+    position: relative;
+
+    background-color: #071f24;
+
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(3, 24, 29, 0.02) 0%,
+            rgba(3, 24, 29, 0.05) 35%,
+            rgba(3, 24, 29, 0.18) 65%,
+            rgba(3, 24, 29, 0.52) 100%
+        ),
+        url("mestrealvaro_fundo.png");
+
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center top;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+
+    color: white;
+
+    font-size: 38px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+header p {
+    margin: 0;
+
+    color: white;
+
+    font-size: 15px;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================
+   TÍTULOS GERAIS
+========================= */
+
+h2 {
+    margin-top: 28px;
+    margin-bottom: 16px;
+}
+
+h3 {
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+h4 {
+    margin-top: 22px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   MENU PRINCIPAL
+========================= */
+
+.acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+/* TÍTULO MEU TRABALHO */
+
+.acoes h2 {
+    margin-top: 32px;
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 26px;
+    font-weight: 800;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.60);
+}
+
+
+/* =========================
+   CARTÕES PRINCIPAIS
+========================= */
+
+.acoes button {
+    position: relative;
+
+    width: 100%;
+    min-height: 90px;
+
+    padding:
+        16px
+        52px
+        16px
+        82px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.60);
+
+    border-radius: 18px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(8, 53, 62, 0.68),
+            rgba(7, 36, 43, 0.52)
+        );
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.24);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* CÍRCULO DOS ÍCONES */
+
+.acoes button::before {
+    position: absolute;
+
+    left: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.20);
+
+    font-size: 24px;
+}
+
+
+/* SETA */
+
+.acoes button::after {
+    content: "›";
+
+    position: absolute;
+
+    right: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: rgba(255, 255, 255, 0.95);
+
+    font-size: 34px;
+    font-weight: 300;
+}
+
+
+/* CORES DOS ÍCONES */
+
+#btn-registro::before {
+    content: "🦪";
+    background: rgba(221, 124, 88, 0.95);
+}
+
+#btn-pendentes::before {
+    content: "🛍️";
+    background: rgba(89, 147, 139, 0.95);
+}
+
+#btn-producao::before {
+    content: "📊";
+    background: rgba(226, 160, 61, 0.95);
+}
+
+#btn-ambiente::before {
+    content: "🌊";
+    background: rgba(45, 137, 175, 0.95);
+}
+
+
+/* HOVER */
+
+.acoes button:hover {
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10, 69, 80, 0.78),
+            rgba(7, 43, 51, 0.64)
+        );
+
+    box-shadow:
+        0 10px 26px rgba(0, 0, 0, 0.30);
+}
+
+.acoes button:active {
+    transform: scale(0.985);
+}
+
+
+/* =========================
+   TEXTO DOS CARTÕES
+========================= */
+
+.texto-botao {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.texto-botao strong {
+    color: white;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.texto-botao span {
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.35;
+}
+
+
+/* =========================
+   BOTÕES GERAIS INTERNOS
+========================= */
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+
+/* =========================
+   FORMULÁRIOS
+========================= */
+
+.formulario {
+    margin-top: 30px;
+    padding: 20px;
+
+    color: #203030;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.18);
+}
+
+.formulario label {
+    display: block;
+
+    margin-top: 16px;
+    margin-bottom: 6px;
+
+    font-weight: 600;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    background: white;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    outline: none;
+
+    border-color: #829b95;
+
+    box-shadow:
+        0 0 0 2px rgba(130, 155, 149, 0.15);
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.formulario button {
+    width: 100%;
+    min-height: 54px;
+
+    margin-top: 18px;
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: #d97d5d;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* BOTÃO SECUNDÁRIO */
+
+.botao-secundario {
+    background: #e4ecea !important;
+    color: #203030 !important;
+}
+
+
+/* =========================
+   ELEMENTOS ESCONDIDOS
+========================= */
+
+.oculto {
+    display: none;
+}
+
+
+/* =========================
+   COMERCIALIZAÇÃO
+========================= */
+
+.formulario h3 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid #e2e7e7;
+}
+
+
+/* =========================
+   CAMPOS CONDICIONAIS
+========================= */
+
+#campo-sacola-outro,
+#campo-sobras {
+    margin-top: 8px;
+    padding: 14px;
+
+    background: #f7f9f9;
+
+    border: 1px solid #e2e7e7;
+    border-radius: 12px;
+}
+
+
+/* =========================
+   RESUMO AUTOMÁTICO
+========================= */
+
+.resumo-calculado {
+    margin-top: 22px;
+    padding: 18px;
+
+    background: #eef5f3;
+
+    border-radius: 14px;
+
+    border: 1px solid #d8e5e1;
+}
+
+.resumo-calculado strong {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 18px;
+}
+
+.resumo-calculado p {
+    margin: 8px 0;
+
+    line-height: 1.45;
+}
+
+
+/* =========================
+   VENDAS PENDENTES
+========================= */
+
+#registros-pendentes {
+    margin-top: 12px;
+}
+
+#registros-pendentes .resumo-producao {
+    background: #f7f9f9;
+}
+
+#registros-pendentes label {
+    display: block;
+
+    margin-top: 14px;
+    margin-bottom: 6px;
+
+    font-weight: 600;
+}
+
+#registros-pendentes input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    background: white;
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.filtros-producao {
+    margin-bottom: 22px;
+    padding: 16px;
+
+    background: #f7f9f9;
+
+    border: 1px solid #e2e7e7;
+    border-radius: 14px;
+}
+
+.filtros-producao label {
+    display: block;
+
+    margin-top: 14px;
+    margin-bottom: 6px;
+
+    font-weight: 600;
+}
+
+.filtros-producao label:first-child {
+    margin-top: 0;
+}
+
+.filtros-producao input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    background: white;
+}
+
+
+/* =========================
+   RESUMO DA PRODUÇÃO
+========================= */
+
+.resumo-producao {
+    margin-bottom: 20px;
+    padding: 18px;
+
+    background: #eef5f3;
+
+    border-radius: 14px;
+
+    border: 1px solid #d8e5e1;
+}
+
+.resumo-producao h3 {
+    margin-top: 0;
+    padding-top: 0;
+    border-bottom: none;
+}
+
+.resumo-producao h4 {
+    margin-top: 22px;
+    margin-bottom: 10px;
+
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid #d8e5e1;
+}
+
+.resumo-producao p {
+    margin: 9px 0;
+    line-height: 1.45;
+}
+
+
+/* =========================
+   PAINEL AMBIENTAL
+========================= */
+
+.local-ambiente {
+    margin-top: -6px;
+    margin-bottom: 20px;
+}
+
+.card-ambiente {
+    margin-top: 16px;
+    padding: 18px;
+
+    background: #eef5f3;
+
+    border: 1px solid #d8e5e1;
+    border-radius: 14px;
+}
+
+.card-ambiente h3 {
+    margin-top: 0;
+}
+
+.card-ambiente p {
+    margin: 10px 0;
+}
+
+.fonte-dados {
+    margin-top: 14px;
+
+    font-size: 13px;
+    color: #63706d;
+}
+
+
+/* =========================
+   MARÉ
+========================= */
+
+.linha-mare {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        auto;
+
+    gap: 12px;
+
+    align-items: center;
+
+    padding: 12px 0;
+
+    border-bottom:
+        1px solid #d8e5e1;
+}
+
+.linha-mare:last-child {
+    border-bottom: none;
+}
+
+.linha-mare strong {
+    font-size: 18px;
+}
+
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        margin: 0;
+
+        padding:
+            26px
+            14px
+            36px;
+
+        background-size: 100% auto;
+        background-position: center top;
+    }
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .acoes h2 {
+        font-size: 24px;
+    }
+
+    .acoes button {
+        min-height: 86px;
+
+        padding:
+            14px
+            46px
+            14px
+            74px;
+    }
+
+    .acoes button::before {
+        left: 14px;
+
+        width: 46px;
+        height: 46px;
+
+        font-size: 22px;
+    }
+
+    .acoes button::after {
+        right: 14px;
+
+        font-size: 30px;
+    }
+
+    .texto-botao strong {
+        font-size: 17px;
+    }
+
+    .texto-botao span {
+        font-size: 12.5px;
+    }
+
+    .formulario {
+        padding: 18px;
+    }
+}

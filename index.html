@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MARISCA</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <main class="container">
+
+      <header>
+
+    <img
+        src="sururu-logo.png"
+        alt="Sururu"
+        class="logo-sururu"
+    >
+
+    <h1>MARISCA</h1>
+
+    <div class="onda-titulo">
+        〰 〰 〰
+    </div>
+
+</header>
+
+
+        <section class="acoes">
+
+    <h2>Meu trabalho</h2>
+
+    <button id="btn-registro">
+
+        <div class="texto-botao">
+
+            <strong>
+                Registrar produção
+            </strong>
+
+            <span>
+                Registre sua produção do dia
+            </span>
+
+        </div>
+
+    </button>
+
+
+    <button id="btn-pendentes">
+
+        <div class="texto-botao">
+
+            <strong>
+                Vendas pendentes
+            </strong>
+
+            <span>
+                Veja e registre vendas pendentes
+            </span>
+
+        </div>
+
+    </button>
+
+
+    <button id="btn-producao">
+
+        <div class="texto-botao">
+
+            <strong>
+                Minha produção
+            </strong>
+
+            <span>
+                Acompanhe seus resultados
+            </span>
+
+        </div>
+
+    </button>
+
+
+    <button id="btn-ambiente">
+
+        <div class="texto-botao">
+
+            <strong>
+                Maré e tempo
+            </strong>
+
+            <span>
+                Confira maré, chuva e vento
+            </span>
+
+        </div>
+
+    </button>
+
+</section>
+
+        <!-- REGISTRAR PRODUÇÃO -->
+
+        <section
+            id="form-producao"
+            class="formulario oculto"
+        >
+
+            <h2>Registrar produção</h2>
+
+            <label for="data-producao">
+                Data
+            </label>
+
+            <input
+                type="date"
+                id="data-producao"
+            >
+
+
+            <label for="quantidade-caixas">
+                Quantas caixas/galeias foram trabalhadas?
+            </label>
+
+            <input
+                type="number"
+                id="quantidade-caixas"
+                min="0"
+                step="0.01"
+                placeholder="Ex.: 5"
+            >
+
+
+            <label for="horas-trabalho">
+                Horas de trabalho
+            </label>
+
+            <input
+                type="number"
+                id="horas-trabalho"
+                min="0"
+                step="0.01"
+                placeholder="Ex.: 4"
+            >
+
+
+            <h3>Comercialização</h3>
+
+
+            <label for="tamanho-sacola">
+                Tamanho da sacolinha
+            </label>
+
+            <select id="tamanho-sacola">
+
+                <option value="">
+                    Selecione
+                </option>
+
+                <option value="400">
+                    400 g
+                </option>
+
+                <option value="1000">
+                    1 kg
+                </option>
+
+                <option value="outro">
+                    Outro
+                </option>
+
+            </select>
+
+
+            <div
+                id="campo-sacola-outro"
+                class="oculto"
+            >
+
+                <label for="peso-sacola-outro">
+                    Peso da sacolinha (g)
+                </label>
+
+                <input
+                    type="number"
+                    id="peso-sacola-outro"
+                    min="0"
+                    step="0.01"
+                    placeholder="Ex.: 500"
+                >
+
+            </div>
+
+
+            <label for="sacolas-por-caixa">
+                Quantas sacolinhas rendeu cada caixa/galeia?
+            </label>
+
+            <input
+                type="number"
+                id="sacolas-por-caixa"
+                min="0"
+                step="0.01"
+                placeholder="Ex.: 12"
+            >
+
+
+            <label for="vendeu-todas">
+    Vendeu todas as sacolinhas?
+</label>
+
+<select id="vendeu-todas">
+
+    <option value="">
+        Selecione
+    </option>
+
+    <option value="sim">
+        Sim
+    </option>
+
+    <option value="nao">
+        Não
+    </option>
+
+</select>
+
+<div
+    id="campo-sobras"
+    class="oculto"
+>
+
+    <label for="sacolas-sobraram">
+        Quantas sacolinhas sobraram?
+    </label>
+
+    <input
+        type="number"
+        id="sacolas-sobraram"
+        min="0"
+        step="0.01"
+        placeholder="Ex.: 2"
+    >
+
+</div>
+
+            <label for="preco-sacola">
+                Valor da sacolinha vendida agora (R$)
+            </label>
+
+            <input
+                type="number"
+                id="preco-sacola"
+                min="0"
+                step="0.01"
+                placeholder="Ex.: 10,00"
+            >
+
+
+            <div
+                id="resumo-calculado"
+                class="resumo-calculado oculto"
+            >
+            </div>
+
+
+            <label for="observacao-producao">
+                Observação
+            </label>
+
+            <textarea
+                id="observacao-producao"
+                rows="3"
+            ></textarea>
+
+
+            <button id="salvar-producao">
+                Salvar produção
+            </button>
+
+            <button
+                id="cancelar-producao"
+                class="botao-secundario"
+            >
+                Cancelar
+            </button>
+
+        </section>
+
+
+        <!-- VENDAS PENDENTES -->
+
+        <section
+            id="lista-pendentes"
+            class="formulario oculto"
+        >
+
+            <h2>Vendas pendentes</h2>
+
+            <div id="registros-pendentes"></div>
+
+            <button
+                id="fechar-pendentes"
+                class="botao-secundario"
+            >
+                Voltar
+            </button>
+
+        </section>
+
+
+        <!-- MINHA PRODUÇÃO -->
+
+        <section
+            id="lista-producao"
+            class="formulario oculto"
+        >
+
+            <h2>Minha produção</h2>
+
+            <div class="filtros-producao">
+
+                <label for="filtro-dia">
+                    Ver por dia
+                </label>
+
+                <input
+                    type="date"
+                    id="filtro-dia"
+                >
+
+
+                <label for="filtro-mes">
+                    Ver por mês
+                </label>
+
+                <input
+                    type="month"
+                    id="filtro-mes"
+                >
+
+
+                <button id="mostrar-todas">
+                    Ver toda a produção
+                </button>
+
+            </div>
+
+            <div id="resumos-producao"></div>
+
+            <button
+                id="fechar-producao"
+                class="botao-secundario"
+            >
+                Voltar
+            </button>
+
+        </section>
+<!-- MARÉ E TEMPO -->
+
+<section
+    id="painel-ambiente"
+    class="formulario oculto"
+>
+
+    <h2>🌦️ Maré e tempo</h2>
+
+<p class="local-ambiente">
+    Porto de Santana - Cariacica/ES
+</p>
+
+
+<!-- MARÉ -->
+
+<div id="dados-mare">
+
+    <p>
+        Carregando maré...
+    </p>
+
+</div>
+
+
+<!-- TEMPO -->
+
+<div id="dados-tempo">
+
+    <p>
+        Carregando previsão...
+    </p>
+
+</div>
+
+    <button
+        id="fechar-ambiente"
+        class="botao-secundario"
+    >
+        Voltar
+    </button>
+
+</section>
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
