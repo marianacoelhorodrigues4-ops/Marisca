@@ -1,6 +1,3 @@
-// ========================================
-// LOGIN E CADASTRO LOCAL
-// ========================================
 
 const telaAcesso =
     document.getElementById("tela-acesso");
@@ -1314,10 +1311,10 @@ function registrarVendaPendente(id) {
         registro;
 
 
-    localStorage.setItem(
-        "producoes",
-        JSON.stringify(producoes)
-    );
+   localStorage.setItem(
+    chaveProducoes(),
+    JSON.stringify(producoes)
+);
 
 
     alert(
