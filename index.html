@@ -18,8 +18,169 @@
 </head>
 
 <body>
+<!-- =========================
+     ACESSO AO MARISCA
+========================= -->
 
-    <main class="container">
+<section id="tela-acesso" class="tela-acesso">
+
+    <div class="cartao-acesso">
+
+        <img
+            src="sururu-logo.png"
+            alt="Sururu"
+            class="logo-acesso"
+        >
+
+        <h1>MARISCA</h1>
+
+        <p class="texto-boas-vindas">
+            Organize sua produção e suas vendas.
+        </p>
+
+
+        <!-- ESCOLHER ENTRAR OU CADASTRAR -->
+
+        <div id="opcoes-acesso">
+
+            <button
+                id="abrir-login"
+                class="botao-acesso-principal"
+            >
+                Entrar
+            </button>
+
+            <button
+                id="abrir-cadastro"
+                class="botao-acesso-secundario"
+            >
+                Criar meu perfil
+            </button>
+
+        </div>
+
+
+        <!-- LOGIN -->
+
+        <div
+            id="form-login"
+            class="oculto"
+        >
+
+            <h2>Entrar</h2>
+
+            <label for="login-telefone">
+                Telefone
+            </label>
+
+            <input
+                type="tel"
+                id="login-telefone"
+                inputmode="numeric"
+                placeholder="Ex.: 27999999999"
+            >
+
+
+            <label for="login-pin">
+                PIN
+            </label>
+
+            <input
+                type="password"
+                id="login-pin"
+                inputmode="numeric"
+                maxlength="6"
+                placeholder="4 a 6 números"
+            >
+
+
+            <button
+                id="btn-entrar"
+                class="botao-acesso-principal"
+            >
+                Entrar no MARISCA
+            </button>
+
+            <button
+                id="voltar-login"
+                class="botao-acesso-secundario"
+            >
+                Voltar
+            </button>
+
+        </div>
+
+
+        <!-- CADASTRO -->
+
+        <div
+            id="form-cadastro"
+            class="oculto"
+        >
+
+            <h2>Criar meu perfil</h2>
+
+
+            <label for="cadastro-nome">
+                Seu nome
+            </label>
+
+            <input
+                type="text"
+                id="cadastro-nome"
+                placeholder="Ex.: Maria"
+            >
+
+
+            <label for="cadastro-telefone">
+                Telefone
+            </label>
+
+            <input
+                type="tel"
+                id="cadastro-telefone"
+                inputmode="numeric"
+                placeholder="Ex.: 27999999999"
+            >
+
+
+            <label for="cadastro-pin">
+                Crie um PIN
+            </label>
+
+            <input
+                type="password"
+                id="cadastro-pin"
+                inputmode="numeric"
+                maxlength="6"
+                placeholder="4 a 6 números"
+            >
+
+            <p class="aviso-pin">
+                Use um número fácil de lembrar.
+            </p>
+
+
+            <button
+                id="btn-cadastrar"
+                class="botao-acesso-principal"
+            >
+                Criar meu perfil
+            </button>
+
+            <button
+                id="voltar-cadastro"
+                class="botao-acesso-secundario"
+            >
+                Voltar
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+    <main     id="app-principal"     class="container oculto" >
 
       <header>
 
@@ -33,6 +194,17 @@
 
     <div class="onda-titulo">
         〰 〰 〰
+        <p
+    id="saudacao-usuario"
+    class="saudacao-usuario"
+></p>
+
+<button
+    id="btn-sair"
+    class="btn-sair"
+>
+    Sair
+</button>
     </div>
 
 </header>
