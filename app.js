@@ -1,4 +1,509 @@
 // ========================================
+// LOGIN E CADASTRO LOCAL
+// ========================================
+
+const telaAcesso =
+    document.getElementById("tela-acesso");
+
+const appPrincipal =
+    document.getElementById("app-principal");
+
+const opcoesAcesso =
+    document.getElementById("opcoes-acesso");
+
+const formLogin =
+    document.getElementById("form-login");
+
+const formCadastro =
+    document.getElementById("form-cadastro");
+
+const abrirLogin =
+    document.getElementById("abrir-login");
+
+const abrirCadastro =
+    document.getElementById("abrir-cadastro");
+
+const voltarLogin =
+    document.getElementById("voltar-login");
+
+const voltarCadastro =
+    document.getElementById("voltar-cadastro");
+
+const btnEntrar =
+    document.getElementById("btn-entrar");
+
+const btnCadastrar =
+    document.getElementById("btn-cadastrar");
+
+const btnSair =
+    document.getElementById("btn-sair");
+
+const saudacaoUsuario =
+    document.getElementById("saudacao-usuario");
+
+
+// ========================================
+// UTILIDADES
+// ========================================
+
+function limparTelefone(telefone) {
+
+    return telefone.replace(/\D/g, "");
+
+}
+
+
+async function gerarHashPIN(pin) {
+
+    const dados =
+        new TextEncoder().encode(pin);
+
+    const hash =
+        await crypto.subtle.digest(
+            "SHA-256",
+            dados
+        );
+
+    return Array.from(
+        new Uint8Array(hash)
+    )
+        .map(function (byte) {
+
+            return byte
+                .toString(16)
+                .padStart(2, "0");
+
+        })
+        .join("");
+
+}
+
+
+// ========================================
+// USUÁRIOS
+// ========================================
+
+function obterUsuarios() {
+
+    return JSON.parse(
+        localStorage.getItem(
+            "marisca_usuarios"
+        )
+    ) || [];
+
+}
+
+
+function salvarUsuarios(usuarios) {
+
+    localStorage.setItem(
+        "marisca_usuarios",
+        JSON.stringify(usuarios)
+    );
+
+}
+
+
+// ========================================
+// ABRIR LOGIN
+// ========================================
+
+abrirLogin.addEventListener(
+    "click",
+    function () {
+
+        opcoesAcesso.classList.add(
+            "oculto"
+        );
+
+        formCadastro.classList.add(
+            "oculto"
+        );
+
+        formLogin.classList.remove(
+            "oculto"
+        );
+
+    }
+);
+
+
+// ========================================
+// ABRIR CADASTRO
+// ========================================
+
+abrirCadastro.addEventListener(
+    "click",
+    function () {
+
+        opcoesAcesso.classList.add(
+            "oculto"
+        );
+
+        formLogin.classList.add(
+            "oculto"
+        );
+
+        formCadastro.classList.remove(
+            "oculto"
+        );
+
+    }
+);
+
+
+// ========================================
+// VOLTAR
+// ========================================
+
+voltarLogin.addEventListener(
+    "click",
+    voltarTelaInicial
+);
+
+voltarCadastro.addEventListener(
+    "click",
+    voltarTelaInicial
+);
+
+
+function voltarTelaInicial() {
+
+    formLogin.classList.add(
+        "oculto"
+    );
+
+    formCadastro.classList.add(
+        "oculto"
+    );
+
+    opcoesAcesso.classList.remove(
+        "oculto"
+    );
+
+}
+
+
+// ========================================
+// CADASTRAR
+// ========================================
+
+btnCadastrar.addEventListener(
+    "click",
+    async function () {
+
+        const nome =
+            document
+                .getElementById(
+                    "cadastro-nome"
+                )
+                .value
+                .trim();
+
+        const telefone =
+            limparTelefone(
+                document
+                    .getElementById(
+                        "cadastro-telefone"
+                    )
+                    .value
+            );
+
+        const pin =
+            document
+                .getElementById(
+                    "cadastro-pin"
+                )
+                .value;
+
+
+        if (
+            !nome ||
+            !telefone ||
+            !pin
+        ) {
+
+            alert(
+                "Preencha nome, telefone e PIN."
+            );
+
+            return;
+
+        }
+
+
+        if (
+            pin.length < 4 ||
+            pin.length > 6 ||
+            !/^\d+$/.test(pin)
+        ) {
+
+            alert(
+                "O PIN deve ter de 4 a 6 números."
+            );
+
+            return;
+
+        }
+
+
+        let usuarios =
+            obterUsuarios();
+
+
+        const usuarioExiste =
+            usuarios.some(
+                function (usuario) {
+
+                    return (
+                        usuario.telefone ===
+                        telefone
+                    );
+
+                }
+            );
+
+
+        if (usuarioExiste) {
+
+            alert(
+                "Já existe um perfil com esse telefone."
+            );
+
+            return;
+
+        }
+
+
+        const pinHash =
+            await gerarHashPIN(pin);
+
+
+        const novoUsuario = {
+
+            nome,
+
+            telefone,
+
+            pinHash
+
+        };
+
+
+        usuarios.push(
+            novoUsuario
+        );
+
+
+        salvarUsuarios(
+            usuarios
+        );
+
+
+        localStorage.setItem(
+            "marisca_usuario_ativo",
+            telefone
+        );
+
+
+        alert(
+            "Perfil criado com sucesso!"
+        );
+
+
+        abrirAplicativo(
+            novoUsuario
+        );
+
+    }
+);
+
+
+// ========================================
+// ENTRAR
+// ========================================
+
+btnEntrar.addEventListener(
+    "click",
+    async function () {
+
+        const telefone =
+            limparTelefone(
+                document
+                    .getElementById(
+                        "login-telefone"
+                    )
+                    .value
+            );
+
+        const pin =
+            document
+                .getElementById(
+                    "login-pin"
+                )
+                .value;
+
+
+        const usuarios =
+            obterUsuarios();
+
+
+        const usuario =
+            usuarios.find(
+                function (item) {
+
+                    return (
+                        item.telefone ===
+                        telefone
+                    );
+
+                }
+            );
+
+
+        if (!usuario) {
+
+            alert(
+                "Perfil não encontrado."
+            );
+
+            return;
+
+        }
+
+
+        const pinHash =
+            await gerarHashPIN(pin);
+
+
+        if (
+            pinHash !==
+            usuario.pinHash
+        ) {
+
+            alert(
+                "PIN incorreto."
+            );
+
+            return;
+
+        }
+
+
+        localStorage.setItem(
+            "marisca_usuario_ativo",
+            telefone
+        );
+
+
+        abrirAplicativo(
+            usuario
+        );
+
+    }
+);
+
+
+// ========================================
+// ABRIR MARISCA
+// ========================================
+
+function abrirAplicativo(usuario) {
+
+    telaAcesso.classList.add(
+        "oculto"
+    );
+
+    appPrincipal.classList.remove(
+        "oculto"
+    );
+
+
+    saudacaoUsuario.textContent =
+        `Olá, ${usuario.nome}!`;
+
+}
+
+
+// ========================================
+// SAIR
+// ========================================
+
+btnSair.addEventListener(
+    "click",
+    function () {
+
+        localStorage.removeItem(
+            "marisca_usuario_ativo"
+        );
+
+
+        appPrincipal.classList.add(
+            "oculto"
+        );
+
+        telaAcesso.classList.remove(
+            "oculto"
+        );
+
+
+        voltarTelaInicial();
+
+    }
+);
+
+
+// ========================================
+// VERIFICAR SESSÃO AO ABRIR
+// ========================================
+
+(function verificarSessao() {
+
+    const telefone =
+        localStorage.getItem(
+            "marisca_usuario_ativo"
+        );
+
+
+    if (!telefone) {
+
+        return;
+
+    }
+
+
+    const usuario =
+        obterUsuarios().find(
+            function (item) {
+
+                return (
+                    item.telefone ===
+                    telefone
+                );
+
+            }
+        );
+
+
+    if (usuario) {
+
+        abrirAplicativo(
+            usuario
+        );
+
+    }
+
+})();
+// ========================================
+// PRODUÇÕES DE CADA MARISQUEIRA
+// ========================================
+function chaveProducoes() {
+    const telefone =
+        localStorage.getItem("marisca_usuario_ativo");
+
+    return `producoes_${telefone}`;
+}
+// ========================================
 // ELEMENTOS PRINCIPAIS
 // ========================================
 
@@ -555,7 +1060,7 @@ botaoSalvar.addEventListener("click", function () {
 
     let producoes =
         JSON.parse(
-            localStorage.getItem("producoes")
+            localStorage.getItem(     chaveProducoes() )
         ) || [];
 
 
@@ -563,9 +1068,9 @@ botaoSalvar.addEventListener("click", function () {
 
 
     localStorage.setItem(
-        "producoes",
-        JSON.stringify(producoes)
-    );
+    chaveProducoes(),
+    JSON.stringify(producoes)
+);
 
 
     alert(
@@ -588,7 +1093,7 @@ function mostrarPendentes() {
 
     const producoes =
         JSON.parse(
-            localStorage.getItem("producoes")
+            localStorage.getItem(     chaveProducoes() )
         ) || [];
 
 
@@ -685,7 +1190,7 @@ function registrarVendaPendente(id) {
 
     let producoes =
         JSON.parse(
-            localStorage.getItem("producoes")
+            localStorage.getItem(     chaveProducoes() )
         ) || [];
 
 
@@ -872,7 +1377,7 @@ function mostrarResumo(
 
     let producoes =
         JSON.parse(
-            localStorage.getItem("producoes")
+            localStorage.getItem(     chaveProducoes() )
         ) || [];
 
 
