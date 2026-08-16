@@ -42,16 +42,6 @@ body {
     background-attachment: fixed;
 }
 
-.container {
-    width: 100%;
-    min-height: 100dvh;
-
-    margin: 0;
-    padding: 26px 14px 36px;
-
-    background: transparent;
-}
-
 
 /* =========================
    TELA PRINCIPAL
@@ -462,7 +452,7 @@ button {
 ========================= */
 
 .oculto {
-    display: none;
+    display: none !important;
 }
 
 
@@ -715,22 +705,17 @@ button {
     }
 
     .container {
-        width: 100%;
-        max-width: none;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
 
-        min-height: 100vh;
-        min-height: 100dvh;
+    margin: 0;
+    padding: 38px 18px 40px;
 
-        margin: 0;
+    position: relative;
 
-        padding:
-            26px
-            14px
-            36px;
-
-        background-size: 100% auto;
-        background-position: center top;
-    }
+    background: transparent;
+}
 
 
     /* LOGO DO SURURU NO CELULAR */
