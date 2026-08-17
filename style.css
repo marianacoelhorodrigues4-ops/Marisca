@@ -454,7 +454,9 @@ button {
 .oculto {
     display: none !important;
 }
-
+.tela-acesso.oculto {
+    display: none !important;
+}
 
 /* =========================
    COMERCIALIZAÇÃO
