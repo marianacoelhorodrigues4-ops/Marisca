@@ -32,7 +32,7 @@ const btnEntrar =
 const btnCadastrar =
     document.getElementById("btn-cadastrar");
 
-const btnSair =
+const  =
     document.getElementById("btn-sair");
 
 const saudacaoUsuario =
@@ -434,17 +434,21 @@ btnSair.addEventListener(
             "marisca_usuario_ativo"
         );
 
+        // ESCONDE O APLICATIVO
+        appPrincipal.classList.add("oculto");
 
-        appPrincipal.classList.add(
-            "oculto"
-        );
-
-        telaAcesso.classList.remove(
-            "oculto"
-        );
-
+        // MOSTRA NOVAMENTE A TELA DE LOGIN
+        telaAcesso.style.display = "flex";
+        telaAcesso.classList.remove("oculto");
 
         voltarTelaInicial();
+
+        // VOLTA PARA O TOPO
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant"
+        });
 
     }
 );
