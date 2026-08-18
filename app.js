@@ -32,12 +32,11 @@ const btnEntrar =
 const btnCadastrar =
     document.getElementById("btn-cadastrar");
 
-const  =
+const btnSair =
     document.getElementById("btn-sair");
 
 const saudacaoUsuario =
     document.getElementById("saudacao-usuario");
-
 
 // ========================================
 // UTILIDADES
