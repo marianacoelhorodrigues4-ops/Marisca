@@ -489,13 +489,19 @@ function mostrarPerfis() {
     });
 }
 
+
 function abrirPerfis() {
     esconderPaineis();
     mostrarPerfis();
 
-    document
-        .getElementById("painel-perfis")
-        .classList.remove("oculto");
+    const painel = document.getElementById("painel-perfis");
+
+    painel.classList.remove("oculto");
+
+    painel.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
 document
