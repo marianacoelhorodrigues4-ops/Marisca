@@ -1,12 +1,12 @@
+
+/* ========================================
+   MARISCA - ESTILO PRINCIPAL
+   MOBILE FIRST
+======================================== */
+
 * {
     box-sizing: border-box;
 }
-
-
-/* =========================
-   ESTRUTURA PRINCIPAL
-   MOBILE FIRST
-========================= */
 
 html {
     margin: 0;
@@ -42,13 +42,13 @@ body {
     background-attachment: fixed;
 }
 
-
-/* =========================
+/* ========================================
    TELA PRINCIPAL
-========================= */
+======================================== */
 
 .container {
     width: 100%;
+
     min-height: 100vh;
     min-height: 100dvh;
 
@@ -74,18 +74,14 @@ body {
     background-position: center top;
 }
 
-
-/* =========================
+/* ========================================
    CABEÇALHO
-========================= */
+======================================== */
 
 header {
     text-align: center;
     margin-bottom: 30px;
 }
-
-
-/* LOGO DO SURURU */
 
 .logo-sururu {
     display: block !important;
@@ -107,7 +103,6 @@ header {
     z-index: 2;
 }
 
-
 header h1 {
     margin: 0 0 8px;
 
@@ -115,7 +110,6 @@ header h1 {
 
     font-size: 38px;
     font-weight: 900;
-
     letter-spacing: 2px;
 
     text-shadow:
@@ -126,17 +120,22 @@ header p {
     margin: 0;
 
     color: white;
-
     font-size: 15px;
 
     text-shadow:
         0 2px 6px rgba(0, 0, 0, 0.55);
 }
 
+.onda-titulo {
+    margin: 4px 0 10px;
 
-/* =========================
-   TÍTULOS GERAIS
-========================= */
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 4px;
+}
+
+/* ========================================
+   TÍTULOS
+======================================== */
 
 h2 {
     margin-top: 28px;
@@ -153,19 +152,15 @@ h4 {
     margin-bottom: 10px;
 }
 
-
-/* =========================
+/* ========================================
    MENU PRINCIPAL
-========================= */
+======================================== */
 
 .acoes {
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
-
-
-/* TÍTULO MEU TRABALHO */
 
 .acoes h2 {
     margin-top: 32px;
@@ -182,10 +177,9 @@ h4 {
         0 2px 8px rgba(0, 0, 0, 0.60);
 }
 
-
-/* =========================
+/* ========================================
    CARTÕES PRINCIPAIS
-========================= */
+======================================== */
 
 .acoes button {
     position: relative;
@@ -193,11 +187,7 @@ h4 {
     width: 100%;
     min-height: 90px;
 
-    padding:
-        16px
-        52px
-        16px
-        82px;
+    padding: 16px 52px 16px 82px;
 
     border:
         1px solid rgba(255, 255, 255, 0.60);
@@ -229,7 +219,6 @@ h4 {
         box-shadow 0.2s ease;
 }
 
-
 /* CÍRCULO DOS ÍCONES */
 
 .acoes button::before {
@@ -244,7 +233,6 @@ h4 {
     height: 50px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -256,8 +244,7 @@ h4 {
     font-size: 24px;
 }
 
-
-/* SETA */
+/* SETA DOS CARTÕES */
 
 .acoes button::after {
     content: "›";
@@ -275,8 +262,7 @@ h4 {
     font-weight: 300;
 }
 
-
-/* CORES DOS ÍCONES */
+/* ÍCONES ORIGINAIS */
 
 #btn-registro::before {
     content: "🦪";
@@ -298,8 +284,19 @@ h4 {
     background: rgba(45, 137, 175, 0.95);
 }
 
+/* NOVOS ÍCONES */
 
-/* HOVER */
+#btn-perfis::before {
+    content: "👥";
+    background: rgba(104, 142, 132, 0.95);
+}
+
+#btn-grupo::before {
+    content: "📈";
+    background: rgba(181, 130, 76, 0.95);
+}
+
+/* INTERAÇÃO */
 
 .acoes button:hover {
     transform: translateY(-2px);
@@ -319,10 +316,9 @@ h4 {
     transform: scale(0.985);
 }
 
-
-/* =========================
+/* ========================================
    TEXTO DOS CARTÕES
-========================= */
+======================================== */
 
 .texto-botao {
     display: flex;
@@ -340,8 +336,7 @@ h4 {
 }
 
 .texto-botao span {
-    color:
-        rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.82);
 
     font-size: 13px;
     font-weight: 400;
@@ -349,20 +344,23 @@ h4 {
     line-height: 1.35;
 }
 
-
-/* =========================
-   BOTÕES GERAIS INTERNOS
-========================= */
+/* ========================================
+   BOTÕES GERAIS
+======================================== */
 
 button {
     border: none;
     cursor: pointer;
 }
 
+button:focus-visible {
+    outline: 3px solid #e4a16c;
+    outline-offset: 3px;
+}
 
-/* =========================
+/* ========================================
    FORMULÁRIOS
-========================= */
+======================================== */
 
 .formulario {
     margin-top: 30px;
@@ -370,8 +368,7 @@ button {
 
     color: #203030;
 
-    background:
-        rgba(255, 255, 255, 0.94);
+    background: rgba(255, 255, 255, 0.94);
 
     border-radius: 16px;
 
@@ -401,6 +398,7 @@ button {
     font-size: 16px;
 
     background: white;
+    color: #203030;
 }
 
 .formulario input:focus,
@@ -438,29 +436,26 @@ button {
         0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-
-/* BOTÃO SECUNDÁRIO */
-
 .botao-secundario {
     background: #e4ecea !important;
     color: #203030 !important;
 }
 
-
-/* =========================
+/* ========================================
    ELEMENTOS ESCONDIDOS
-========================= */
+======================================== */
 
 .oculto {
     display: none !important;
 }
+
 .tela-acesso.oculto {
     display: none !important;
 }
 
-/* =========================
+/* ========================================
    COMERCIALIZAÇÃO
-========================= */
+======================================== */
 
 .formulario h3 {
     padding-top: 8px;
@@ -469,10 +464,9 @@ button {
     border-bottom: 1px solid #e2e7e7;
 }
 
-
-/* =========================
+/* ========================================
    CAMPOS CONDICIONAIS
-========================= */
+======================================== */
 
 #campo-sacola-outro,
 #campo-sobras {
@@ -485,10 +479,9 @@ button {
     border-radius: 12px;
 }
 
-
-/* =========================
+/* ========================================
    RESUMO AUTOMÁTICO
-========================= */
+======================================== */
 
 .resumo-calculado {
     margin-top: 22px;
@@ -511,14 +504,12 @@ button {
 
 .resumo-calculado p {
     margin: 8px 0;
-
     line-height: 1.45;
 }
 
-
-/* =========================
+/* ========================================
    VENDAS PENDENTES
-========================= */
+======================================== */
 
 #registros-pendentes {
     margin-top: 12px;
@@ -550,10 +541,9 @@ button {
     background: white;
 }
 
-
-/* =========================
+/* ========================================
    FILTROS
-========================= */
+======================================== */
 
 .filtros-producao {
     margin-bottom: 22px;
@@ -591,10 +581,9 @@ button {
     background: white;
 }
 
-
-/* =========================
+/* ========================================
    RESUMO DA PRODUÇÃO
-========================= */
+======================================== */
 
 .resumo-producao {
     margin-bottom: 20px;
@@ -627,10 +616,9 @@ button {
     line-height: 1.45;
 }
 
-
-/* =========================
+/* ========================================
    PAINEL AMBIENTAL
-========================= */
+======================================== */
 
 .local-ambiente {
     margin-top: -6px;
@@ -662,27 +650,21 @@ button {
     color: #63706d;
 }
 
-
-/* =========================
+/* ========================================
    MARÉ
-========================= */
+======================================== */
 
 .linha-mare {
     display: grid;
 
-    grid-template-columns:
-        1fr
-        auto
-        auto;
-
+    grid-template-columns: 1fr auto auto;
     gap: 12px;
 
     align-items: center;
 
     padding: 12px 0;
 
-    border-bottom:
-        1px solid #d8e5e1;
+    border-bottom: 1px solid #d8e5e1;
 }
 
 .linha-mare:last-child {
@@ -693,10 +675,331 @@ button {
     font-size: 18px;
 }
 
+/* ========================================
+   LOGIN E CADASTRO
+======================================== */
 
-/* =========================
-   CELULARES
-========================= */
+.tela-acesso {
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background-image:
+        linear-gradient(
+            rgba(4, 34, 40, 0.35),
+            rgba(4, 34, 40, 0.78)
+        ),
+        url("mestrealvaro_fundo.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cartao-acesso {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 28px 22px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.45);
+
+    border-radius: 24px;
+
+    background: rgba(5, 43, 49, 0.76);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    color: white;
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.30);
+}
+
+.logo-acesso {
+    display: block;
+
+    width: 70px !important;
+    height: 70px !important;
+
+    object-fit: contain;
+
+    margin: 0 auto 10px;
+}
+
+.cartao-acesso h1 {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 38px;
+    letter-spacing: 2px;
+}
+
+.texto-boas-vindas {
+    margin: 10px 0 28px;
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.cartao-acesso h2 {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.cartao-acesso label {
+    display: block;
+
+    margin: 16px 0 6px;
+
+    font-weight: 700;
+}
+
+.cartao-acesso input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    color: #173034;
+
+    font-size: 17px;
+}
+
+.botao-acesso-principal,
+.botao-acesso-secundario {
+    width: 100%;
+
+    min-height: 55px;
+
+    margin-top: 16px;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.botao-acesso-principal {
+    background: #d97d5d;
+    color: white;
+}
+
+.botao-acesso-secundario {
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.35);
+}
+
+.aviso-pin {
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.saudacao-usuario {
+    margin-top: 10px;
+
+    color: white;
+    font-size: 14px;
+}
+
+.btn-sair {
+    width: auto !important;
+    min-height: auto !important;
+
+    margin: 8px auto 0 !important;
+    padding: 7px 14px !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.45) !important;
+
+    border-radius: 20px !important;
+
+    background:
+        rgba(3, 34, 40, 0.45) !important;
+
+    color: white !important;
+
+    font-size: 13px !important;
+
+    box-shadow: none !important;
+}
+
+/* ========================================
+   NOVO - PERFIL SELECIONADO
+======================================== */
+
+.perfil-atual {
+    margin: 0 0 8px;
+    padding: 14px 16px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    background: rgba(5, 43, 49, 0.78);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.40);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    font-size: 15px;
+}
+
+.perfil-atual strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #f3c4a7;
+
+    font-size: 20px;
+}
+
+/* ========================================
+   NOVO - LISTA DE PERFIS
+======================================== */
+
+.lista-perfis {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin: 20px 0;
+}
+
+.cartao-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    background: #eef5f3;
+
+    border: 1px solid #d8e5e1;
+    border-radius: 14px;
+}
+
+.cartao-perfil.ativo {
+    background: #dcece6;
+
+    border: 2px solid #598f83;
+}
+
+.info-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.info-perfil strong {
+    color: #203030;
+
+    font-size: 17px;
+
+    overflow-wrap: anywhere;
+}
+
+.info-perfil span {
+    color: #60736e;
+
+    font-size: 13px;
+}
+
+.cartao-perfil button {
+    width: auto;
+    min-width: 100px;
+
+    min-height: 44px;
+
+    margin: 0;
+    padding: 10px 14px;
+
+    font-size: 14px;
+
+    flex-shrink: 0;
+}
+
+/* ========================================
+   NOVO - RESUMO DO GRUPO
+======================================== */
+
+#resumo-grupo {
+    margin-top: 18px;
+}
+
+#resumo-grupo .resumo-producao {
+    background: #eef5f3;
+}
+
+.resumo-individual-grupo {
+    margin-top: 14px;
+    padding: 16px;
+
+    background: #f7f9f9;
+
+    border: 1px solid #d8e5e1;
+    border-radius: 12px;
+}
+
+.resumo-individual-grupo h4 {
+    margin-top: 0;
+
+    color: #203030;
+
+    font-size: 17px;
+}
+
+.resumo-individual-grupo p {
+    margin: 8px 0;
+
+    line-height: 1.45;
+}
+
+.resumo-destaque {
+    padding: 14px;
+
+    background: #dcece6;
+
+    border-radius: 12px;
+
+    font-weight: 700;
+}
+
+/* ========================================
+   RESPONSIVIDADE - CELULARES
+======================================== */
 
 @media (max-width: 600px) {
 
@@ -707,20 +1010,18 @@ button {
     }
 
     .container {
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
+        width: 100%;
 
-    margin: 0;
-    padding: 38px 18px 40px;
+        min-height: 100vh;
+        min-height: 100dvh;
 
-    position: relative;
+        margin: 0;
+        padding: 38px 18px 40px;
 
-    background: transparent;
-}
+        position: relative;
 
-
-    /* LOGO DO SURURU NO CELULAR */
+        background: transparent;
+    }
 
     .logo-sururu {
         width: 70px !important;
@@ -729,7 +1030,6 @@ button {
         max-width: 70px !important;
         max-height: 70px !important;
     }
-
 
     header h1 {
         font-size: 34px;
@@ -746,11 +1046,7 @@ button {
     .acoes button {
         min-height: 86px;
 
-        padding:
-            14px
-            46px
-            14px
-            74px;
+        padding: 14px 46px 14px 74px;
     }
 
     .acoes button::before {
@@ -779,204 +1075,31 @@ button {
     .formulario {
         padding: 18px;
     }
+
+    .cartao-perfil {
+        flex-wrap: wrap;
+    }
+
+    .cartao-perfil button {
+        width: 100%;
+    }
+
+    .perfil-atual strong {
+        font-size: 18px;
+    }
 }
 
-/* =========================
-   LOGIN E CADASTRO
-========================= */
-
-.tela-acesso {
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 24px;
-
-    background-image:
-        linear-gradient(
-            rgba(4, 34, 40, 0.35),
-            rgba(4, 34, 40, 0.78)
-        ),
-        url("mestrealvaro_fundo.png");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-
-.cartao-acesso {
-    width: 100%;
-    max-width: 420px;
-
-    padding: 28px 22px;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.45);
-
-    border-radius: 24px;
-
-    background:
-        rgba(5, 43, 49, 0.76);
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    color: white;
-
-    box-shadow:
-        0 14px 35px
-        rgba(0,0,0,0.30);
-}
-
-
-.logo-acesso {
-    display: block;
-
-    width: 70px !important;
-    height: 70px !important;
-
-    object-fit: contain;
-
-    margin: 0 auto 10px;
-}
-
-
-.cartao-acesso h1 {
-    margin: 0;
-
-    text-align: center;
-
-    font-size: 38px;
-    letter-spacing: 2px;
-}
-
-
-.texto-boas-vindas {
-    margin:
-        10px
-        0
-        28px;
-
-    text-align: center;
-
-    color:
-        rgba(255,255,255,0.84);
-}
-
-
-.cartao-acesso h2 {
-    text-align: center;
-    margin-bottom: 22px;
-}
-
-
-.cartao-acesso label {
-    display: block;
-
-    margin:
-        16px
-        0
-        6px;
-
-    font-weight: 700;
-}
-
-
-.cartao-acesso input {
-    width: 100%;
-
-    padding: 14px;
-
-    border: none;
-    border-radius: 12px;
-
-    background:
-        rgba(255,255,255,0.94);
-
-    color: #173034;
-
-    font-size: 17px;
-}
-
-
-.botao-acesso-principal,
-.botao-acesso-secundario {
-    width: 100%;
-
-    min-height: 55px;
-
-    margin-top: 16px;
-
-    border: none;
-    border-radius: 14px;
-
-    font-size: 17px;
-    font-weight: 700;
-}
-
-
-.botao-acesso-principal {
-    background: #d97d5d;
-    color: white;
-}
-
-
-.botao-acesso-secundario {
-    background:
-        rgba(255,255,255,0.15);
-
-    color: white;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.35);
-}
-
-
-.aviso-pin {
-    margin-top: 8px;
-
-    font-size: 13px;
-
-    color:
-        rgba(255,255,255,0.72);
-}
-
-
-.saudacao-usuario {
-    margin-top: 10px;
-
-    color: white;
-
-    font-size: 14px;
-}
-
-
-.btn-sair {
-    width: auto !important;
-    min-height: auto !important;
-
-    margin: 8px auto 0 !important;
-    padding: 7px 14px !important;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.45) !important;
-
-    border-radius: 20px !important;
-
-    background:
-        rgba(3,34,40,0.45) !important;
-
-    color: white !important;
-
-    font-size: 13px !important;
-
-    box-shadow: none !important;
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
 }
